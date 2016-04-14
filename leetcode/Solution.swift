@@ -2,6 +2,19 @@ import Foundation
 
 public class Solution : NSObject {
     
+    public func nodeListString(head: ListNode!) -> String {
+        var result = "[";
+        var node = head;
+        while (node != nil) {
+            result = result + String(node.val);
+            node = node.next;
+            if (node != nil) {
+                result = result + ", ";
+            }
+        }
+        result = result + "]";
+        return result;
+    }
 }
 
 /**

@@ -2,6 +2,74 @@ import Foundation
 
 extension Solution {
     
+    public func testReverseKGroup() {
+        
+        let a: ListNode = ListNode.init(1);
+        let b: ListNode = ListNode.init(2);
+        let c: ListNode = ListNode.init(3);
+        let d: ListNode = ListNode.init(4);
+        let e: ListNode = ListNode.init(5);
+        
+        var k = 1;
+        
+        a.next = nil;
+        k = 3;
+        NSLog("input 1 : %@, %d", nodeListString(a), k);
+        let header1 = reverseKGroup(a, k);
+        NSLog("output 1 : %@", nodeListString(header1));
+        
+        a.next = nil;
+        k = 1;
+        NSLog("input 2 : %@, %d", nodeListString(a), k);
+        let header2 = reverseKGroup(a, k);
+        NSLog("output 2 : %@", nodeListString(header2));
+        
+        a.next = b;
+        b.next = c;
+        c.next = nil;
+        k = 3;
+        NSLog("input 3 : %@, %d", nodeListString(a), k);
+        let header3 = reverseKGroup(a, k);
+        NSLog("output 3 : %@", nodeListString(header3));
+        
+        a.next = b;
+        b.next = c;
+        c.next = nil;
+        k = 2;
+        NSLog("input 4 : %@, %d", nodeListString(a), k);
+        let header4 = reverseKGroup(a, k);
+        NSLog("output 4 : %@", nodeListString(header4));
+        
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        d.next = nil;
+        k = 2;
+        NSLog("input 5 : %@, %d", nodeListString(a), k);
+        let header5 = reverseKGroup(a, k);
+        NSLog("output 5 : %@", nodeListString(header5));
+        
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        d.next = e;
+        e.next = nil;
+        k = 2;
+        NSLog("input 6 : %@, %d", nodeListString(a), k);
+        let header6 = reverseKGroup(a, k);
+        NSLog("output 6 : %@", nodeListString(header6));
+        
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        d.next = e;
+        e.next = nil;
+        k = 3;
+        NSLog("input 7 : %@, %d", nodeListString(a), k);
+        let header7 = reverseKGroup(a, k);
+        NSLog("output 7 : %@", nodeListString(header7));
+    }
+    
     public func reverseKGroup(head: ListNode?, _ k: Int) -> ListNode? {
         
         var headerNode : ListNode? ;
