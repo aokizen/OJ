@@ -12,62 +12,63 @@ extension Solution {
         
         var k = 1;
         
+        resetTestListNode(a, b, c, d, e);
         a.next = nil;
         k = 3;
         NSLog("input 1 : %@, %d", nodeListString(a), k);
         let header1 = reverseKGroup(a, k);
         NSLog("output 1 : %@", nodeListString(header1));
         
+        resetTestListNode(a, b, c, d, e);
         a.next = nil;
         k = 1;
         NSLog("input 2 : %@, %d", nodeListString(a), k);
         let header2 = reverseKGroup(a, k);
         NSLog("output 2 : %@", nodeListString(header2));
         
-        a.next = b;
-        b.next = c;
+        resetTestListNode(a, b, c, d, e);
         c.next = nil;
         k = 3;
         NSLog("input 3 : %@, %d", nodeListString(a), k);
         let header3 = reverseKGroup(a, k);
         NSLog("output 3 : %@", nodeListString(header3));
         
-        a.next = b;
-        b.next = c;
+        resetTestListNode(a, b, c, d, e);
         c.next = nil;
         k = 2;
         NSLog("input 4 : %@, %d", nodeListString(a), k);
         let header4 = reverseKGroup(a, k);
         NSLog("output 4 : %@", nodeListString(header4));
         
-        a.next = b;
-        b.next = c;
-        c.next = d;
+        resetTestListNode(a, b, c, d, e);
         d.next = nil;
         k = 2;
         NSLog("input 5 : %@, %d", nodeListString(a), k);
         let header5 = reverseKGroup(a, k);
         NSLog("output 5 : %@", nodeListString(header5));
         
-        a.next = b;
-        b.next = c;
-        c.next = d;
-        d.next = e;
-        e.next = nil;
+        resetTestListNode(a, b, c, d, e);
         k = 2;
         NSLog("input 6 : %@, %d", nodeListString(a), k);
         let header6 = reverseKGroup(a, k);
         NSLog("output 6 : %@", nodeListString(header6));
         
+        resetTestListNode(a, b, c, d, e);
+        k = 3;
+        NSLog("input 7 : %@, %d", nodeListString(a), k);
+        let header7 = reverseKGroup(a, k);
+        NSLog("output 7 : %@", nodeListString(header7));
+        
+        NSLog("input 8 : %@, %d", nodeListString(nil), k);
+        NSLog("output 8 : %@", nodeListString(nil));
+    }
+    
+    func resetTestListNode(a: ListNode!, _ b: ListNode!, _ c: ListNode!, _ d: ListNode!, _ e: ListNode!) -> Void {
         a.next = b;
         b.next = c;
         c.next = d;
         d.next = e;
         e.next = nil;
-        k = 3;
-        NSLog("input 7 : %@, %d", nodeListString(a), k);
-        let header7 = reverseKGroup(a, k);
-        NSLog("output 7 : %@", nodeListString(header7));
     }
     
     public func reverseKGroup(head: ListNode?, _ k: Int) -> ListNode? {
